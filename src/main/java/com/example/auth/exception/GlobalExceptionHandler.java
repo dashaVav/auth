@@ -24,7 +24,7 @@ public class GlobalExceptionHandler {
         return handleTheException(e, HttpStatus.BAD_REQUEST);
     }
 
-    @ExceptionHandler({ExpiredJwtException.class, InvalidTokenException.class})
+    @ExceptionHandler({ExpiredJwtException.class, InvalidTokenException.class, InvalidPasswordException.class})
     public ResponseEntity<AuthError> handleForbiddenException(RuntimeException e) {
         return handleTheException(e, HttpStatus.FORBIDDEN);
     }
