@@ -25,8 +25,8 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler({ExpiredJwtException.class, InvalidTokenException.class, InvalidPasswordException.class})
-    public ResponseEntity<AuthError> handleForbiddenException(RuntimeException e) {
-        return handleTheException(e, HttpStatus.FORBIDDEN);
+    public ResponseEntity<AuthError> handleUnauthorizedException(RuntimeException e) {
+        return handleTheException(e, HttpStatus.UNAUTHORIZED);
     }
 
     @ExceptionHandler(UsernameNotFoundException.class)

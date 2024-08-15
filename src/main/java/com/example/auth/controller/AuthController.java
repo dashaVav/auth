@@ -19,4 +19,7 @@ public interface AuthController {
 
     @PostMapping("/check")
     ResponseEntity<JwtAuthDTO> isTokenValid(@Valid @RequestBody TokenValidationDTO request);
+
+    @PostMapping("get/admin")
+    ResponseEntity<JwtAuthDTO> getAdmin(@Valid @RequestBody TokenValidationDTO request);
 }

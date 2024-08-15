@@ -1,6 +1,6 @@
 package com.example.auth.configuration;
 
-import com.example.auth.service.UserService;
+import com.example.auth.service.impl.UserServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -22,7 +22,7 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableMethodSecurity
 @RequiredArgsConstructor
 public class SecurityConfiguration {
-    private final UserService userService;
+    private final UserServiceImpl userService;
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
