@@ -38,7 +38,7 @@ jobs:
         run: mvn -B verify sonar:sonar -Dsonar.projectKey=dashaVav_auth -Dsonar.organization=dashavav -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN -Dsonar.coverage.jacoco.xmlReportPaths=./target/site/jacoco/jacoco.xml
 
       - name: Docker image build
-        run: docker build -t ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }} -f ${{ github.workspace }}/api-gateway.Dockerfile ${{ github.workspace }}
+        run: docker build -t ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }} -f ${{ github.workspace }}/auth.Dockerfile ${{ github.workspace }}
 
       - name: Log in to the Container registry
         uses: docker/login-action@65b78e6e13532edd9afa3aa52ac7964289d1a9c1
