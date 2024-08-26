@@ -3,8 +3,8 @@ spring:
     name: auth
   datasource:
     url: jdbc:postgresql://postgresql-auth:5432/auth
-    username: ${AUTH-POSTGRES_USER}
-    password: ${AUTH-POSTGRES_PASSWORD}
+    username: ${AUTH_POSTGRES_USER}
+    password: ${AUTH_POSTGRES_PASSWORD}
   liquibase:
     enabled: false
   jpa:
