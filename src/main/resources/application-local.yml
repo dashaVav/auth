@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: auth
+  datasource:
+    url: jdbc:postgresql://localhost:5433/auth
+    username: ${AUTH_POSTGRES_USER}
+    password: ${AUTH_POSTGRES_PASSWORD}
+  liquibase:
+    enabled: false
+  jpa:
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        ddl-auto: validate
+        format_sql: true
+    database: postgresql
+
+token:
+  signing:
+    key: ${TOKEN_SIGNING_KEY}
+
+server:
+  port: 8096
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,prometheus
+  metrics:
+    distribution:
+      percentiles-histogram:
+        "[http.server.requests]": true
+  prometheus:
+    metrics:
+      export:
+        enabled: true
